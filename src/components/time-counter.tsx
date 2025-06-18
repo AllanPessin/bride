@@ -56,7 +56,7 @@ export default function TimeCounter() {
   return (
     <Card className="w-full max-w-md shadow-xl rounded-xl">
       <CardHeader>
-        <CardTitle className="font-headline text-2xl text-center text-primary">Nosso Tempo Juntos</CardTitle>
+        <CardTitle className="font-headline text-2xl text-center text-primary">Eu te amo há</CardTitle>
       </CardHeader>
       <CardContent>
         {duration ? (

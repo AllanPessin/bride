@@ -8,10 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
 const images = [
-  { src: "https://placehold.co/600x400.png", alt: "Imagem de uma paisagem serena", hint: "serene landscape" },
-  { src: "https://placehold.co/600x401.png", alt: "Imagem de um momento feliz", hint: "happy moment" },
-  { src: "https://placehold.co/600x402.png", alt: "Imagem de uma jornada inesquecível", hint: "unforgettable journey" },
-  { src: "https://placehold.co/600x399.png", alt: "Imagem abstrata simbolizando o tempo", hint: "abstract time" },
+  { src: "/images/image1.jpeg", alt: "Imagem de uma paisagem serena", hint: "serene landscape" },
+  { src: "/images/image1.jpeg", alt: "Imagem de uma paisagem serena", hint: "serene landscape" },
 ];
 
 export default function ImageCarousel() {
@@ -23,7 +21,7 @@ export default function ImageCarousel() {
     setTimeout(() => {
       setCurrentIndex(newIndex);
       setIsFading(false);
-    }, 300); // Animation duration
+    }, 300);
   };
 
   const nextSlide = () => {
@@ -45,17 +43,17 @@ export default function ImageCarousel() {
         <CardTitle className="font-headline text-2xl text-center text-primary">Nossas Memórias</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="relative overflow-hidden rounded-lg aspect-video shadow-inner">
+        <div className="relative overflow-hidden rounded-lg aspect-[9/16] shadow-inner">
           {images.map((image, index) => (
             <Image
               key={image.src}
               src={image.src}
               alt={image.alt}
-              width={600}
-              height={400}
+              width={800}
+              height={800}
               priority={index === 0} // Prioritize loading the first image
               className={cn(
-                "absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out",
+                "absolute w-full h-full object-cover transition-opacity duration-300 ease-in-out",
                 index === currentIndex ? "opacity-100 z-10" : "opacity-0",
                 isFading && index === currentIndex ? "opacity-0" : "", // current image fades out
                 isFading && index === (currentIndex + 1) % images.length && "opacity-100" // next image fades in (simplified)
