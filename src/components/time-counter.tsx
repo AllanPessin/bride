@@ -62,7 +62,7 @@ export default function TimeCounter() {
                 {duration ? (
                     <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3 justify-items-center">
                         <TimeUnit value={duration.years} label="Anos" />
-                        <TimeUnit value={duration.month} label="Meses" />
+                        <TimeUnit value={duration.months} label="Meses" />
                         <TimeUnit value={duration.days} label="Dias" />
                         <TimeUnit value={duration.hours} label="Horas" />
                         <TimeUnit value={duration.minutes} label="Minutos" />
